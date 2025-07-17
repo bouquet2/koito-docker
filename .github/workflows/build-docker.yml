@@ -19,10 +19,10 @@ jobs:
       - name: Checkout current repository
         uses: actions/checkout@v4
       
-      - name: Get latest release tag
-        id: latest_release
+      - name: Get latest tag
+        id: latest_tag
         run: |
-          LATEST_TAG=$(curl -s https://api.github.com/repos/gabehf/Koito/releases/latest | jq -r .tag_name)
+          LATEST_TAG=$(curl -s https://api.github.com/repos/gabehf/Koito/tags | jq -r '.[0].name')
           echo "LATEST_TAG=${LATEST_TAG}" >> $GITHUB_ENV
           echo "KOITO_VERSION=${LATEST_TAG}" >> $GITHUB_ENV
       
