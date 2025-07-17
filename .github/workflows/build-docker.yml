@@ -52,7 +52,7 @@ jobs:
         with:
           context: Koito
           push: true
-          tags: ghcr.io/kreatoo/koito-docker:${{ env.LATEST_TAG }}
+          tags: ghcr.io/${{ github.repository }}:${{ env.LATEST_TAG }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
           platforms: linux/arm64
