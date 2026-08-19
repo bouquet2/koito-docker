@@ -11,7 +11,7 @@ COPY ./client .
 
 RUN yarn run build
 
-FROM golang:1.25 AS backend
+FROM golang:1.27 AS backend
 
 ARG KOITO_VERSION
 ENV CGO_ENABLED=1
